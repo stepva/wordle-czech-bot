@@ -9,29 +9,34 @@ from utils import get_words, results
 # guesses.txt = možná slova jako validní guess (21 923 slov)
 # uniques.txt = slova s pěti různými písmeny (17 546 slov)
 
-WORDS = get_words('words/words.txt')
-GUESSES = get_words('words/guesses.txt')
+WORDS = get_words("words/words.txt")
+GUESSES = get_words("words/guesses.txt")
 LETTERS = list(set([l for w in GUESSES for l in w]))
-UNIQUES = get_words('words/uniques.txt')
+UNIQUES = get_words("words/uniques.txt")
+
 
 def main():
     good = np.array([])
     wrong = []
 
     for n in range(1000):
-        if DEBUG: print('##############################################')
+        if DEBUG:
+            print("##############################################")
 
         guesses = GUESSES[:]
         letters = LETTERS[:]
         uniques = UNIQUES[:]
-        known = {0: '[^.]', 1: '[^.]', 2: '[^.]', 3: '[^.]', 4: '[^.]'}
-        includes = {'exact': {}, 'at_least': {}}
+        known = {0: "[^.]", 1: "[^.]", 2: "[^.]", 3: "[^.]", 4: "[^.]"}
+        includes = {"exact": {}, "at_least": {}}
 
         main_word = random.choice(WORDS)
-        if DEBUG: print('word: ', main_word)
-        
-        good, wrong = strategy_1(main_word, guesses, letters, known, includes, good, wrong, uniques)
-    
+        if DEBUG:
+            print("word: ", main_word)
+
+        good, wrong = strategy_1(
+            main_word, guesses, letters, known, includes, good, wrong, uniques
+        )
+
     results(good, wrong, n)
 
 
