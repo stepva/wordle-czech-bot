@@ -9,10 +9,10 @@ from utils import get_words, results
 # guesses.txt = možná slova jako validní guess (21 923 slov)
 # uniques.txt = slova s pěti různými písmeny (17 546 slov)
 
-WORDS = get_words('words.txt')
-GUESSES = get_words('guesses.txt')
+WORDS = get_words('words/words.txt')
+GUESSES = get_words('words/guesses.txt')
 LETTERS = list(set([l for w in GUESSES for l in w]))
-UNIQUES = get_words('uniques.txt')
+UNIQUES = get_words('words/uniques.txt')
 
 def main():
     good = np.array([])
