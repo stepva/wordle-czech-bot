@@ -8,7 +8,7 @@ def strategy_1(main_word, guesses, letters, known, includes, good, wrong, unique
     """
     První guess z uniques, druhý guess z uniques jen s možnými písmeny, další normálně
     """
-    guess = pick_guess_wo_altering(uniques, lts=letters)
+    guess = pick_guess_wo_altering(uniques, letters=letters)
 
     i = 1
     while i < 7:
@@ -18,9 +18,9 @@ def strategy_1(main_word, guesses, letters, known, includes, good, wrong, unique
             break
 
         if i == 1:
-            guess = pick_guess_wo_altering(uniques, lts=letters)
+            guess = pick_guess_wo_altering(uniques, letters=letters)
         else:
-            guess = pick_guess(guesses, lts=letters, known=known, includes=includes)
+            guess = pick_guess(guesses, letters=letters, known=known, includes=includes)
 
         i += 1
     if i == 7:
@@ -39,7 +39,7 @@ def strategy_2(main_word, guesses, letters, known, includes, good, wrong, unique
     """
     První guess z uniques, další normálně
     """
-    guess = pick_guess_wo_altering(uniques, lts=letters)
+    guess = pick_guess_wo_altering(uniques, letters=letters)
 
     i = 1
     while i < 7:
@@ -48,7 +48,7 @@ def strategy_2(main_word, guesses, letters, known, includes, good, wrong, unique
         if check_guess(main_word, guess, letters, known, includes):
             break
 
-        guess = pick_guess(guesses, lts=letters, known=known, includes=includes)
+        guess = pick_guess(guesses, letters=letters, known=known, includes=includes)
 
         i += 1
     if i == 7:

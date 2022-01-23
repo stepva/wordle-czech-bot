@@ -4,11 +4,11 @@ import re
 from __init__ import DEBUG
 
 
-def pick_guess(guesses, lts, known=None, includes=None):
+def pick_guess(guesses, letters, known=None, includes=None):
     if DEBUG:
         print("entering pick_guess: ", len(guesses), known, includes)
 
-    guesses[:] = [g for g in guesses if all(l in lts for l in g)]
+    guesses[:] = [g for g in guesses if all(l in letters for l in g)]
 
     if known:
         r = re.compile("".join(known.values()))
@@ -39,8 +39,8 @@ def pick_guess(guesses, lts, known=None, includes=None):
     return choice
 
 
-def pick_guess_wo_altering(guesses, lts):
-    subset = [g for g in guesses if all(l in lts for l in g)]
+def pick_guess_wo_altering(guesses, letters):
+    subset = [g for g in guesses if all(l in letters for l in g)]
     return random.choice(subset)
 
 
