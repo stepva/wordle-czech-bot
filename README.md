@@ -1,4 +1,4 @@
-# Bot na českou verzi hry Wordle
+# Bot hrající českou verzi hry Wordle
 
 (Ale asi jde použít i na jiné verze)
 
