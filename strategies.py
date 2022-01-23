@@ -57,7 +57,7 @@ def strategy_2(main_word, guesses, letters, known, includes, good, wrong, unique
         wrong.append(main_word)
     else:
         if DEBUG:
-            print("UHDODL!", main_word, i)
+            print("UHODL!", main_word, i)
         good = np.append(good, i)
 
     return good, wrong
