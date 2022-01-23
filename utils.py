@@ -1,6 +1,46 @@
 import numpy as np
 import time
 
+LETTERS = [
+    "ě",
+    "š",
+    "č",
+    "ř",
+    "ž",
+    "ý",
+    "á",
+    "í",
+    "é",
+    "ů",
+    "q",
+    "w",
+    "e",
+    "r",
+    "t",
+    "y",
+    "u",
+    "i",
+    "o",
+    "p",
+    "a",
+    "s",
+    "d",
+    "f",
+    "g",
+    "h",
+    "j",
+    "k",
+    "l",
+    "z",
+    "x",
+    "c",
+    "v",
+    "b",
+    "n",
+    "m",
+]
+# LETTERS = list(set([l for w in GUESSES for l in w]))
+
 
 def get_words(word_file):
     with open(word_file, "r") as f:

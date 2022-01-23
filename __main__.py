@@ -1,10 +1,10 @@
 import time
 import random
 import numpy as np
+
 from strategies import strategy_1, strategy_2
 from __init__ import DEBUG
-
-from utils import get_words, results
+from utils import get_words, results, LETTERS
 
 # words.txt = možná slova jako tajenka (4 172 slov)
 # guesses.txt = možná slova jako validní guess (21 923 slov)
@@ -12,7 +12,6 @@ from utils import get_words, results
 
 WORDS = get_words("words/words.txt")
 GUESSES = get_words("words/guesses.txt")
-LETTERS = list(set([l for w in GUESSES for l in w]))
 UNIQUES = get_words("words/uniques.txt")
 
 
