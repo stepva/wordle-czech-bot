@@ -1,3 +1,4 @@
+import time
 import random
 import numpy as np
 from strategies import strategy_1, strategy_2
@@ -16,6 +17,8 @@ UNIQUES = get_words("words/uniques.txt")
 
 
 def main():
+    start = time.time()
+
     good = np.array([])
     wrong = []
 
@@ -37,7 +40,7 @@ def main():
             main_word, guesses, letters, known, includes, good, wrong, uniques
         )
 
-    results(good, wrong, n)
+    results(good, wrong, n, start)
 
 
 if __name__ == "__main__":
